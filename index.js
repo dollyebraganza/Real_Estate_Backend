@@ -14,9 +14,8 @@ mongoose.connect("mongodb+srv://Dolly:Dolly15@real-estate.726rp.mongodb.net/?ret
 const app = express();
 
 app.use(express.json());
-
 app.get('/',(req,res)=>{
-    res.send({"Start":true})
+    res.send({start: "input"})
 })
 
 app.listen(3001, () => {
