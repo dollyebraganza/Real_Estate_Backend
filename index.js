@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import  userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
+import cors from 'cors';
 dotenv.config();
 
 mongoose.connect("mongodb+srv://Dolly:Dolly15@real-estate.726rp.mongodb.net/?retryWrites=true&w=majority&appName=Real-Estate").then(() => {
@@ -12,6 +13,7 @@ mongoose.connect("mongodb+srv://Dolly:Dolly15@real-estate.726rp.mongodb.net/?ret
 });
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 app.get('/',(req,res)=>{
